@@ -9,10 +9,11 @@ Adafruit_NeoPixel seq1 = Adafruit_NeoPixel(83, PIN1, NEO_GRB + NEO_KHZ800);
 
 
 void setup() {
+  //iniciando o serial e os leds
   seq1.begin();
   Serial.begin(9600);
 }
-
+// animações mini paredão
 void animacao1(int c1, int c2, int c3, int c4, int c5, int c6, int c7, int c8, int c9);
 void animacao2();
 void animacao3(int c1, int c2, int c3, int c4, int c5, int c6);
@@ -29,8 +30,10 @@ void animacao13(int c1, int c2, int c3, int delay13);
 void animacao14(int c1, int c2, int c3, int delay14);
 void animacao15(int c1, int c2, int c3, int delay15);
 void animacao16();
+//apaga os leds
 void apagar();
 void acender(int c1, int c2, int c3);
+//funções que auxiliam as animações
 void ColunaGeral(int n, int c1, int c2, int c3, int d);
 void Chuva(int n, int co, int c1, int c2, int c3, int d);
 void ColunaLados(int n, int c1, int c2, int c3, int d);
@@ -61,7 +64,9 @@ void Lados(int n, int c1, int c2, int c3, int c4, int c5, int c6, int delaylado)
 
 void loop()
 {
+//começo enviando 1 para o serial para iniciar o som no processing no mesmo momento dos leds
 Serial.println('1');
+
 animacao1(255, 0,0,0,255,0,0,0,255);
  apagar();
  delay(80);
